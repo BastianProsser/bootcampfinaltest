@@ -1,0 +1,40 @@
+
+    <h1>Skate Park</h1>
+
+    <div class="py-4">
+      <h2>Administración</h2>
+      <hr class="w-50" />
+
+      <table class="table w-50 m-auto">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Años de experiencia</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each skaters}}
+          <tr>
+            <th scope="row">{{@index}}</th>
+            <td><img width="100px" height="auto" src="/uploads/{{this.foto}}"></td>
+            <td>{{this.nombre}}</td>
+            <td>{{this.anos_experiencia}}</td>
+            <td>{{this.especialidad}}</td>
+            <td><input type="checkbox" {{#if this.estado}} checked {{/if}} onclick="cambioEstado({{this.id}})"></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+<script>
+  const cambioEstado = async (id) => {
+    try {
+      await axios.put('/cambioStatus', {id}).then((e) => {alert(e ? 'skater modificado' : 'hubo un error')})
+    } catch (e) {
+      console.log(e)
+  }}
+</script>

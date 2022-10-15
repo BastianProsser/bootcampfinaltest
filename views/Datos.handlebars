@@ -1,0 +1,58 @@
+
+    <h1>Skate Park</h1>
+
+    <div class="py-4">
+      <h2>Datos del perfil</h2>
+      <hr class="w-50" />
+
+      <form>
+        <div class="form-group row w-50 m-auto">
+          <div style="display: none;"><input class="form-control m-auto" value='{{datos.id}}' name="id"></div>
+          <div class="form-group col-12 col-sm-6">
+            <label id='email'>Email</label>
+            <input
+              class="form-control m-auto"
+              disabled
+              value="{{datos.email}}"
+            />
+          </div>
+
+          <div class="form-group col-12 col-sm-6">
+            <label id='nombre'>Nombre</label>
+            <input class="form-control m-auto" value="{{datos.nombre}}" name="nombre"/>
+          </div>
+          <div class="form-group col-12 col-sm-6">
+            <label id='password'>Password</label>
+            <input
+              type="password"
+              class="form-control m-auto"
+              value="{{datos.password}}"
+              name="password"
+            />
+          </div>
+          <div class="form-group col-12 col-sm-6">
+            <label id='password2'>Repita la password</label>
+            <input
+              type="password"
+              class="form-control m-auto"
+              value="{{datos.password}}"
+              name="password2"
+            />
+          </div>
+          <div class="form-group col-12 col-sm-6">
+            <label id='experiencia'>Años de experiencia</label>
+            <input class="form-control m-auto" value="{{datos.anos_experiencia}}" name="experiencia"/>
+          </div>
+          <div class="form-group col-12 col-sm-6">
+            <label id='especialidad'>Especialidad</label>
+            <input class="form-control m-auto" value="{{datos.especialidad}}" name="especialidad" />
+          </div>
+        </div>
+        <div class="mb-1">
+          <button formaction="/Actualizar" formmethod="post" class="btn btn-primary">Actualizar</button>
+        </div>
+        <div>
+          <button formaction="/Eliminar" formmethod="post" class="btn btn-danger">Eliminar cuenta</button>
+        </div>
+      </form>
+    </div>

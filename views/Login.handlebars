@@ -1,0 +1,41 @@
+
+    <h1>Skate Park</h1>
+
+    <div class="py-5">
+      <h2>Iniciar Sesión</h2>
+      <hr class="w-50" />
+
+      <form action='/Login' method='post'>
+        <div class="form-group">
+          <div class="form-group">
+            <label>Email</label>
+            <input name="email" class="form-control w-50 m-auto" required="required"/>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type='password' name="password" class="form-control w-50 m-auto" required="required"/>
+          </div>
+        </div>
+        <button class="btn btn-success mb-3">Ingresar</button>
+        <p>¿Aún no tienes cuenta? <a href="http://localhost:3000/Registro">Regístrate</a></p>
+      </form>
+    </div>
+
+{{!-- codigo que era para validar el token --}}
+{{!-- <script>
+  const login = async () => {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const payload = {email, password};
+    try {
+      const { data: token } = await axios.post('/verify', payload)
+      alert('exito')
+      window.location.href = `/Datos?token=${token}`
+    } catch ({ response }) {
+      const { data } = response;
+      const { error } = data;
+      alert(error)
+    }
+  }
+</script> --}}
+
